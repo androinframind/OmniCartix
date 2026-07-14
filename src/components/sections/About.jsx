@@ -14,7 +14,7 @@ export function About() {
         </Reveal>
         <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,.95fr)_minmax(320px,1.05fr)] lg:gap-14">
           <Reveal as="article" className="rounded-[8px] border border-[var(--soft-border)] bg-white p-6 shadow-[6px_6px_0_rgba(0,0,0,.1)] lg:sticky lg:top-[calc(var(--header-height)+28px)]">
-            <p className="text-[var(--muted)]">Omnicartix Ltd is a UK-registered company committed to building trusted consumer brands designed for modern lifestyles. Our focus is on identifying everyday needs and delivering thoughtfully developed products that prioritize quality, functionality, and customer satisfaction.</p>
+            <p className="text-[var(--muted)]">Omnicartix is a UK-registered company committed to building trusted consumer brands designed for modern lifestyles. Our focus is on identifying everyday needs and delivering thoughtfully developed products that prioritize quality, functionality, and customer satisfaction.</p>
             <p className="mt-4 text-[var(--muted)]">Rather than operating as a single-product business or eCommerce store, Omnicartix serves as the parent company behind multiple consumer-focused brands. Individual brands owned by the company can have their own dedicated websites, each shaped to deliver exceptional experiences within its respective market.</p>
             <div className="mt-6 border-t border-black/10 pt-5">
               <p className="heading-font text-lg font-extrabold text-[var(--primary)]">A more human way to build</p>

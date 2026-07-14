@@ -6,6 +6,7 @@ import { ScrollProgress } from './components/layout/ScrollProgress'
 import { Header } from './components/layout/Header'
 import { Footer } from './components/layout/Footer'
 import { BackToTop } from './components/layout/BackToTop'
+import { useGsapAnimations } from './hooks/useGsapAnimations'
 import { Home } from './routes/Home'
 import { PrivacyPolicy } from './routes/PrivacyPolicy'
 import { TermsAndConditions } from './routes/TermsAndConditions'
@@ -21,6 +22,9 @@ function ScrollToTopOnRoute() {
 }
 
 export default function App() {
+  const location = useLocation()
+  useGsapAnimations(location.pathname)
+
   return (
     <>
       <SkipLink />

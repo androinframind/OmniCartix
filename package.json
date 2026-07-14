@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "latest",
     "@vitejs/plugin-react": "latest",
     "framer-motion": "^12.42.2",
+    "gsap": "^3.15.0",
     "react": "latest",
     "react-dom": "latest",
     "react-router-dom": "latest",

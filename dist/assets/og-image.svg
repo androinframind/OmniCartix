@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">Omnicartix Ltd social preview</title>
-  <desc id="desc">Premium blue corporate preview graphic for Omnicartix Ltd.</desc>
+  <title id="title">Omnicartix social preview</title>
+  <desc id="desc">Premium blue corporate preview graphic for Omnicartix.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0F172A"/>
@@ -32,7 +32,7 @@
     <path d="M24 57c8-28 38-42 64-28c-8 28-38 42-64 28Z" fill="#FFFFFF" opacity="0.95"/>
     <circle cx="58" cy="54" r="7" fill="#06B6D4"/>
   </g>
-  <text x="160" y="332" fill="#FFFFFF" font-family="Manrope, Inter, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="-3">Omnicartix Ltd</text>
+  <text x="160" y="332" fill="#FFFFFF" font-family="Manrope, Inter, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="-3">Omnicartix</text>
   <text x="164" y="394" fill="#DDEBFF" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="600">Building modern consumer brands for everyday living.</text>
   <text x="164" y="454" fill="#BAE6FD" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="2">UK-REGISTERED CONSUMER BRAND DEVELOPMENT COMPANY</text>
 </svg>

@@ -12,7 +12,7 @@ import { site } from '../data/site'
 
 export function Home() {
   usePageMeta({
-    title: 'Omnicartix Ltd | Modern Consumer Brand Development Company',
+    title: 'Omnicartix | Modern Consumer Brand Development Company',
     description: site.description,
     canonicalPath: '/'
   })

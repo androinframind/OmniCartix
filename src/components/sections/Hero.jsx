@@ -1,48 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
 import { heroStats } from '../../data/homeSections'
-import { usePrefersReducedMotion } from '../../hooks/usePrefersReducedMotion'
 import { Button } from '../ui/Button'
 import { Counter } from '../ui/Counter'
 import { Reveal } from '../ui/Reveal'
 
 const heroVideoSrc = '/assets/hero%20section%20video.mp4'
 
-function useHeroParallax(sectionRef) {
-  const [offset, setOffset] = useState(0)
-  const prefersReducedMotion = usePrefersReducedMotion()
-
-  useEffect(() => {
-    if (prefersReducedMotion) return undefined
-
-    let frameId = 0
-    const update = () => {
-      frameId = 0
-      const section = sectionRef.current
-      if (!section) return
-
-      const rect = section.getBoundingClientRect()
-      const viewportHeight = window.innerHeight || 1
-      const progress = Math.min(Math.max(-rect.top / viewportHeight, 0), 1)
-      setOffset(progress * 90)
-    }
-
-    const requestUpdate = () => {
-      if (!frameId) frameId = window.requestAnimationFrame(update)
-    }
-
-    update()
-    window.addEventListener('scroll', requestUpdate, { passive: true })
-    window.addEventListener('resize', requestUpdate)
-
-    return () => {
-      window.removeEventListener('scroll', requestUpdate)
-      window.removeEventListener('resize', requestUpdate)
-      if (frameId) window.cancelAnimationFrame(frameId)
-    }
-  }, [prefersReducedMotion, sectionRef])
-
-  return prefersReducedMotion ? 0 : offset
-}
 
 function HeroArt() {
   return (
@@ -77,14 +39,11 @@ function HeroArt() {
 }
 
 export function Hero() {
-  const sectionRef = useRef(null)
-  const parallaxOffset = useHeroParallax(sectionRef)
-
   return (
-    <section ref={sectionRef} id="home" className="relative flex min-h-svh items-center overflow-hidden bg-white pt-[calc(var(--header-height)+.65rem)] pb-7" aria-labelledby="hero-title">
+    <section id="home" className="relative flex min-h-svh items-center overflow-hidden bg-white pt-[calc(var(--header-height)+.65rem)] pb-7" aria-labelledby="hero-title">
       <video
-        className="pointer-events-none absolute inset-x-0 top-[-8%] h-[116%] w-full object-cover opacity-[.86] will-change-transform"
-        style={{ transform: `translate3d(0, ${parallaxOffset}px, 0) scale(1.04)` }}
+        className="pointer-events-none fixed inset-x-0 top-[-8%] z-0 h-[116svh] w-full object-cover opacity-[.86] will-change-transform"
+        style={{ transform: 'scale(1.04)' }}
         src={heroVideoSrc}
         autoPlay
         muted
@@ -93,17 +52,18 @@ export function Hero() {
         preload="metadata"
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-white/75 via-white/35 to-white/5" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/55" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/20" aria-hidden="true" />
       <div className="container-page relative z-[1] grid items-center gap-6 lg:grid-cols-[minmax(0,1.08fr)_minmax(280px,.78fr)]">
         <Reveal className="hero__content">
-          <p className="eyebrow"><span />UK-registered consumer brand development company</p>
-          <h1 id="hero-title" className="heading-font max-w-[620px] text-[clamp(2.15rem,4.2vw,4.15rem)] font-extrabold leading-[1.06] tracking-[-.055em] text-[var(--primary)]">Building Modern Consumer Brands for Everyday Living.</h1>
-          <p className="mt-3 max-w-[600px] text-[clamp(.94rem,1.16vw,1.02rem)] leading-[1.58] text-[var(--muted)]">Omnicartix Ltd is a UK-registered company focused on developing high-quality consumer brands across wellness, lifestyle, home, and emerging product categories. This is the official corporate website for Omnicartix Ltd, not an eCommerce store. We believe in creating products that combine innovation, reliability, and exceptional customer experience.</p>
+          <p className="eyebrow text-black"><span />UK-registered consumer brand development company</p>
+          <h1 id="hero-title" className="heading-font max-w-[620px] text-[clamp(2.15rem,4.2vw,4.15rem)] font-extrabold leading-[1.06] tracking-[-.055em] text-black">Building Modern Consumer Brands for Everyday Living.</h1>
+          <p className="mt-3 max-w-[600px] text-[clamp(.94rem,1.16vw,1.02rem)] font-semibold leading-[1.58] text-[#151518]">Omnicartix is a UK-registered company focused on developing high-quality consumer brands across wellness, lifestyle, home, and emerging product categories. This is the official corporate website for Omnicartix, not an eCommerce store. We believe in creating products that combine innovation, reliability, and exceptional customer experience.</p>
           <div className="mt-5 flex flex-wrap gap-3" aria-label="Hero calls to action">
-            <Button href="#about" className="min-h-[46px] px-4 py-3">Explore Our Company</Button>
-            <Button href="#contact" variant="secondary" className="min-h-[46px] px-4 py-3 shadow-none">Contact Us</Button>
+            <Button href="#about" className="min-h-[46px] px-4 py-3 ring-1 ring-black/15">Explore Our Company</Button>
+            <Button href="#contact" variant="secondary" className="min-h-[46px] bg-white px-4 py-3 text-black shadow-[5px_5px_0_rgba(0,0,0,.12)] ring-1 ring-black/15">Contact Us</Button>
           </div>
-          <div className="mt-5 max-w-[560px] border-l-2 border-black/20 pl-4 text-sm font-semibold text-[var(--secondary)]">
+          <div className="mt-5 max-w-[560px] border-l-2 border-black/30 pl-4 text-sm font-bold text-black">
             Built around everyday needs, careful product thinking, and customer experiences that feel simple, useful, and dependable.
           </div>
           <dl className="mt-5 grid grid-cols-3 gap-2" aria-label="Website focus statistics">
@@ -117,7 +77,7 @@ export function Hero() {
         </Reveal>
 
         <Reveal className="mx-auto w-full max-w-[430px]" delay={120}>
-          <div className="relative overflow-hidden rounded-[12px] border border-[rgba(17,17,17,.12)] bg-white/90 shadow-[10px_10px_0_rgba(0,0,0,.14)] backdrop-blur-sm will-change-transform" style={{ transform: `translate3d(0, ${parallaxOffset * -0.16}px, 0)` }}>
+          <div className="relative overflow-hidden rounded-[12px] border border-[rgba(17,17,17,.12)] bg-white/90 shadow-[10px_10px_0_rgba(0,0,0,.14)] backdrop-blur-sm will-change-transform">
             <span className="absolute right-14 top-[-18px] h-[70px] w-[70px] rounded-md bg-gradient-to-br from-[#111] to-[#777] opacity-[.08]" />
             <span className="absolute bottom-[-24px] left-12 h-[92px] w-[92px] rounded-md bg-gradient-to-br from-[#111] to-[#777] opacity-[.08]" />
             <HeroArt />

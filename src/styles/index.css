@@ -55,7 +55,7 @@ html {
 ::-webkit-scrollbar-corner { background: var(--background); }
 
 .container-page { width: min(100% - 40px, 1180px); margin-inline: auto; }
-.section { position: relative; padding: clamp(5rem, 9vw, 8rem) 0; }
+.section { position: relative; z-index: 1; padding: clamp(5rem, 9vw, 8rem) 0; }
 .card-3d-sm { box-shadow: 6px 6px 0 rgba(0,0,0,.1); }
 .card-3d-md { box-shadow: 9px 9px 0 rgba(0,0,0,.14); }
 .card-3d-lg { box-shadow: 12px 12px 0 rgba(0,0,0,.16); }

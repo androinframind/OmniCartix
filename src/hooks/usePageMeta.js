@@ -8,7 +8,7 @@ function setMeta(selector, attribute, value) {
 
 export function usePageMeta({ title, description, canonicalPath = '/', ogTitle, ogDescription } = {}) {
   useEffect(() => {
-    const pageTitle = title || 'Omnicartix Ltd | Modern Consumer Brand Development Company'
+    const pageTitle = title || 'Omnicartix | Modern Consumer Brand Development Company'
     const pageDescription = description || site.description
     const canonical = `${site.url}${canonicalPath === '/' ? '/' : canonicalPath}`
 

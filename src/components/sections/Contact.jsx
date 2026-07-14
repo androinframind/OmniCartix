@@ -63,7 +63,7 @@ export function Contact() {
       <div className="container-page grid items-start gap-10 lg:grid-cols-[minmax(0,.85fr)_minmax(360px,1fr)] lg:gap-16">
         <Reveal>
           <p className="eyebrow"><span />Contact</p>
-          <h2 id="contact-title" className="heading-font text-[clamp(2rem,4.6vw,4rem)] font-extrabold leading-[1.03] tracking-[-.055em] text-[var(--primary)]">Connect with Omnicartix Ltd.</h2>
+          <h2 id="contact-title" className="heading-font text-[clamp(2rem,4.6vw,4rem)] font-extrabold leading-[1.03] tracking-[-.055em] text-[var(--primary)]">Connect with Omnicartix.</h2>
           <p className="mt-4 max-w-[580px] text-lg text-[var(--muted)]">For company enquiries, brand development discussions, or partnership conversations, use the form and the team can review your message.</p>
 
           <div className="mt-8 rounded-[8px] border border-[var(--soft-border)] bg-white p-6 shadow-[6px_6px_0_rgba(0,0,0,.1)]">
@@ -99,7 +99,6 @@ export function Contact() {
           <FormField label="Subject" id="subject" error={errors.subject}><input type="text" required {...fieldProps('subject')} /></FormField>
           <FormField label="Message" id="message" error={errors.message}><textarea rows="6" required {...fieldProps('message')} /></FormField>
           <button className="brand-gradient mt-2 min-h-[52px] w-full rounded-[6px] px-5 py-3 font-extrabold text-white shadow-[5px_5px_0_rgba(0,0,0,.18)] transition hover:-translate-y-1 hover:shadow-[7px_7px_0_rgba(0,0,0,.22)]" type="submit">Submit Message</button>
-          <p className="mt-3 text-sm text-[var(--muted)]">Your message is handled as a genuine company enquiry. This form is currently configured for frontend validation and can be connected to a backend endpoint later.</p>
         </Reveal>
       </div>
     </section>

@@ -3,10 +3,10 @@ import { site } from './site'
 export const privacyPolicy = {
   title: 'Privacy Policy',
   eyebrow: 'Legal information',
-  description: 'This Privacy Policy explains how Omnicartix Ltd handles personal information when you visit this website or contact us.',
+  description: 'This Privacy Policy explains how Omnicartix handles personal information when you visit this website or contact us.',
   lastUpdated: '9 July 2026',
-  metaTitle: 'Privacy Policy | Omnicartix Ltd',
-  metaDescription: 'Read the Privacy Policy for Omnicartix Ltd, a UK-registered consumer brand development company.',
+  metaTitle: 'Privacy Policy | Omnicartix',
+  metaDescription: 'Read the Privacy Policy for Omnicartix, a UK-registered consumer brand development company.',
   canonicalPath: '/privacy-policy',
   sidebarLabel: 'Policy sections',
   sections: [
@@ -15,7 +15,7 @@ export const privacyPolicy = {
       nav: 'Overview',
       title: '1. Overview',
       paragraphs: [
-        'Omnicartix Ltd is a UK-registered consumer brand development company. This website is designed to provide corporate information about Omnicartix Ltd and allow visitors to contact us.',
+        'Omnicartix is a UK-registered consumer brand development company. This website is designed to provide corporate information about Omnicartix and allow visitors to contact us.',
         'We aim to handle personal information responsibly, transparently, and only where it is relevant to a legitimate business purpose.'
       ]
     },
@@ -25,7 +25,7 @@ export const privacyPolicy = {
       title: '2. Information we collect',
       paragraphs: [
         'We may collect information you choose to provide when contacting us, including your full name, email address, company name, subject, and message content.',
-        'The current website contact form is configured for frontend validation. If connected to a backend or email service later, submitted information may be sent to Omnicartix Ltd for review and response.'
+        'The current website contact form is configured for frontend validation. If connected to a backend or email service later, submitted information may be sent to Omnicartix for review and response.'
       ]
     },
     {
@@ -82,10 +82,10 @@ export const privacyPolicy = {
 export const termsAndConditions = {
   title: 'Terms & Conditions',
   eyebrow: 'Legal information',
-  description: 'These Terms & Conditions explain the rules for using the Omnicartix Ltd corporate website.',
+  description: 'These Terms & Conditions explain the rules for using the Omnicartix corporate website.',
   lastUpdated: '9 July 2026',
-  metaTitle: 'Terms & Conditions | Omnicartix Ltd',
-  metaDescription: 'Read the Terms and Conditions for using the Omnicartix Ltd corporate website.',
+  metaTitle: 'Terms & Conditions | Omnicartix',
+  metaDescription: 'Read the Terms and Conditions for using the Omnicartix corporate website.',
   canonicalPath: '/terms-and-conditions',
   sidebarLabel: 'Terms sections',
   sections: [
@@ -95,7 +95,7 @@ export const termsAndConditions = {
       title: '1. Acceptance of these terms',
       paragraphs: [
         'By accessing or using this website, you agree to these Terms & Conditions. If you do not agree with these terms, you should not use this website.',
-        'This website is the corporate website of Omnicartix Ltd and is intended to provide general company information.'
+        'This website is the corporate website of Omnicartix and is intended to provide general company information.'
       ]
     },
     {
@@ -103,7 +103,7 @@ export const termsAndConditions = {
       nav: 'Website use',
       title: '2. Use of this website',
       paragraphs: [
-        'You may use this website for lawful purposes only. You must not misuse the website, attempt to interfere with its operation, introduce harmful code, or use it in a way that may damage Omnicartix Ltd or other users.'
+        'You may use this website for lawful purposes only. You must not misuse the website, attempt to interfere with its operation, introduce harmful code, or use it in a way that may damage Omnicartix or other users.'
       ]
     },
     {
@@ -120,7 +120,7 @@ export const termsAndConditions = {
       nav: 'Brands and products',
       title: '4. Brands and product information',
       paragraphs: [
-        'Omnicartix Ltd may develop or manage consumer-focused brands. Individual brands may have their own dedicated websites, policies, terms, product information, and customer support processes.',
+        'Omnicartix may develop or manage consumer-focused brands. Individual brands may have their own dedicated websites, policies, terms, product information, and customer support processes.',
         'This corporate website is not an eCommerce store and does not currently sell products directly.'
       ]
     },
@@ -129,7 +129,7 @@ export const termsAndConditions = {
       nav: 'Intellectual property',
       title: '5. Intellectual property',
       paragraphs: [
-        'Unless otherwise stated, website content, design elements, text, graphics, and brand materials are owned by or licensed to Omnicartix Ltd. You may not copy, reproduce, distribute, or modify website content without permission, except as allowed by applicable law.'
+        'Unless otherwise stated, website content, design elements, text, graphics, and brand materials are owned by or licensed to Omnicartix. You may not copy, reproduce, distribute, or modify website content without permission, except as allowed by applicable law.'
       ]
     },
     {
@@ -137,7 +137,7 @@ export const termsAndConditions = {
       nav: 'Third-party links',
       title: '6. Third-party links',
       paragraphs: [
-        'This website may include links to third-party websites or platforms. These links are provided for convenience only. Omnicartix Ltd is not responsible for the content, policies, or practices of third-party websites.'
+        'This website may include links to third-party websites or platforms. These links are provided for convenience only. Omnicartix is not responsible for the content, policies, or practices of third-party websites.'
       ]
     },
     {
@@ -145,7 +145,7 @@ export const termsAndConditions = {
       nav: 'Liability',
       title: '7. Limitation of liability',
       paragraphs: [
-        'To the fullest extent permitted by law, Omnicartix Ltd is not liable for loss or damage arising from use of this website, reliance on its content, or temporary unavailability of the website.'
+        'To the fullest extent permitted by law, Omnicartix is not liable for loss or damage arising from use of this website, reliance on its content, or temporary unavailability of the website.'
       ]
     },
     {
