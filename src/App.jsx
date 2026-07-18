@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import { useLayoutEffect } from 'react'
+import { useCallback, useLayoutEffect, useState } from 'react'
 import { SkipLink } from './components/layout/SkipLink'
 import { PageLoader } from './components/layout/PageLoader'
 import { ScrollProgress } from './components/layout/ScrollProgress'
@@ -40,18 +40,21 @@ function ScrollToTopOnRoute() {
 
 export default function App() {
   const location = useLocation()
-  useGsapAnimations(location.pathname)
+  const [introComplete, setIntroComplete] = useState(false)
+  const handleLoaderComplete = useCallback(() => setIntroComplete(true), [])
+
+  useGsapAnimations(location.pathname, introComplete)
 
   return (
     <>
       <SkipLink />
-      <PageLoader />
+      <PageLoader onComplete={handleLoaderComplete} />
       <ScrollProgress />
-      <Header />
+      <Header introComplete={introComplete} />
       <ScrollToTopOnRoute />
       <main id="main">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home introComplete={introComplete} />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/privacy-policy.html" element={<Navigate to="/privacy-policy" replace />} />

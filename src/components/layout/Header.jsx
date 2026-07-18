@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { motion } from 'framer-motion'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { navItems } from '../../data/site'
 import { useActiveSection } from '../../hooks/useActiveSection'
@@ -17,7 +18,16 @@ function scrollToHash(hash, reducedMotion) {
   window.scrollTo({ top, behavior: reducedMotion ? 'auto' : 'smooth' })
 }
 
-export function Header() {
+const headerVariants = {
+  hidden: { opacity: 0, y: -18 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: .45, ease: [0.22, 1, 0.36, 1] }
+  }
+}
+
+export function Header({ introComplete = true }) {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const menuRef = useRef(null)
@@ -80,7 +90,13 @@ export function Header() {
   }
 
   return (
-    <header data-header className={`fixed inset-x-0 top-0 z-[1000] transition-all duration-200 ${isScrolled ? 'border-b border-[rgba(17,17,17,.1)] bg-white/80 shadow-[0_4px_0_rgba(0,0,0,.06)] backdrop-blur-md' : ''}`}>
+    <motion.header
+      data-header
+      className={`fixed inset-x-0 top-0 z-[1000] transition-[background-color,border-color,box-shadow,backdrop-filter] duration-200 ${isScrolled ? 'border-b border-[rgba(17,17,17,.1)] bg-white/80 shadow-[0_4px_0_rgba(0,0,0,.06)] backdrop-blur-md' : ''}`}
+      variants={headerVariants}
+      initial={introComplete || prefersReducedMotion ? 'visible' : 'hidden'}
+      animate={introComplete || prefersReducedMotion ? 'visible' : 'hidden'}
+    >
       <nav className="container-page flex min-h-[var(--header-height)] items-center justify-between" aria-label="Primary navigation">
         <BrandLogo to="/#home" onClick={() => setIsOpen(false)} />
 
@@ -119,6 +135,6 @@ export function Header() {
           })}
         </div>
       </nav>
-    </header>
+    </motion.header>
   )
 }

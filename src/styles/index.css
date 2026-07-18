@@ -30,7 +30,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 body.menu-open,
-body.loader-active { overflow: hidden; }
+body.loader-active {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 ::selection { background: rgba(17, 17, 17, .12); color: var(--primary); }
 :focus-visible { outline: 3px solid rgba(17, 17, 17, .55); outline-offset: 4px; }
 svg { display: block; max-width: 100%; }
@@ -106,12 +109,27 @@ html {
 .page-loader {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
+  overflow: hidden;
+  pointer-events: auto;
+  touch-action: none;
+  background: transparent;
+}
+
+.page-loader__panels {
+  position: absolute;
+  inset: 0;
   display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 50% 42%, rgba(17, 17, 17, .08), transparent 18rem),
-    #ffffff;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.page-loader__panel {
+  display: block;
+  width: calc(100% + 1px);
+  height: 100%;
+  background: #000;
+  will-change: transform;
 }
 
 .hero-art { filter: grayscale(1); }
@@ -140,7 +158,6 @@ html {
 .future-marker:nth-child(2) { animation-delay: .4s; }
 .future-marker:nth-child(3) { animation-delay: .8s; }
 
-@keyframes loaderPulse { 0%, 100% { transform: translateY(0); opacity: .45; } 50% { transform: translateY(-10px); opacity: 1; } }
 @keyframes rotateRing { to { transform: rotate(360deg); } }
 @keyframes bobNode { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 @keyframes dashLine { to { stroke-dashoffset: -36; } }

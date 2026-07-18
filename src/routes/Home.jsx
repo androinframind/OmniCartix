@@ -10,7 +10,7 @@ import { FutureRoadmap } from '../components/sections/FutureRoadmap'
 import { Contact } from '../components/sections/Contact'
 import { site } from '../data/site'
 
-export function Home() {
+export function Home({ introComplete = true }) {
   usePageMeta({
     title: 'Omnicartix | Modern Consumer Brand Development Company',
     description: site.description,
@@ -19,7 +19,7 @@ export function Home() {
 
   return (
     <>
-      <Hero />
+      <Hero introComplete={introComplete} />
       <About />
       <VisionMission />
       <WhatWeDo />

@@ -4,31 +4,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 gsap.registerPlugin(ScrollTrigger)
 
-export function useGsapAnimations(routeKey) {
+export function useGsapAnimations(routeKey, enabled = true) {
   useEffect(() => {
+    if (!enabled) return undefined
+
     const media = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (media.matches) return undefined
 
     const timer = window.setTimeout(() => {
       const context = gsap.context(() => {
-        gsap.fromTo(
-          '#home .hero__content > *',
-          { autoAlpha: 0, y: 22 },
-          { autoAlpha: 1, y: 0, duration: .8, stagger: .09, ease: 'power3.out', delay: .15 }
-        )
-
-        gsap.fromTo(
-          '#home video',
-          { scale: 1.09 },
-          { scale: 1.04, duration: 1.6, ease: 'power3.out' }
-        )
-
-        gsap.fromTo(
-          '#home .hero-art',
-          { autoAlpha: 0, rotate: -2, scale: .96, y: 24 },
-          { autoAlpha: 1, rotate: 0, scale: 1, y: 0, duration: 1, ease: 'power3.out', delay: .25 }
-        )
-
         gsap.utils.toArray('main section:not(#home)').forEach((section) => {
           gsap.fromTo(
             section,
@@ -94,5 +78,5 @@ export function useGsapAnimations(routeKey) {
       delete window.__omnicartixGsapContext
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
     }
-  }, [routeKey])
+  }, [routeKey, enabled])
 }
